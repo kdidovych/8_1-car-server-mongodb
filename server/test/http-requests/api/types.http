@@ -1,0 +1,41 @@
+### Get all types
+
+GET http://localhost:5000/api/types
+Content-Type: application/json
+
+
+### Get all types with pagination
+
+GET http://localhost:5000/api/types?limit=3&page=2
+Content-Type: application/json
+
+
+### Get type by Id
+
+GET http://localhost:5000/api/types/65f000000000000000000003
+Content-Type: application/json
+
+
+### Create type
+
+POST http://localhost:5000/api/types
+Content-Type: application/json
+
+{
+  "name": "воздушние"
+}
+
+### Update type
+
+PUT http://localhost:5000/api/types
+Content-Type: application/json
+
+{
+  "_id": "6aeea4aa92e72ada67e58641",
+  "name": "полувоздушниеT"
+}
+
+### Delete type with id
+
+DELETE http://localhost:5000/api/types/6aeea59192e72ada67e58644
+Content-Type: application/json

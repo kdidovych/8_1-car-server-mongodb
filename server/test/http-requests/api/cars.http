@@ -1,0 +1,88 @@
+### Get all carsPopulated
+
+GET http://localhost:5000/api/carsPopulated
+Content-Type: application/json
+
+
+### Get all carsPopulated with pagination and filters (brand and color only per task requirements)
+
+GET http://localhost:5000/api/carsPopulated?limit=36&page=1&brand=BMW&color=серый
+Content-Type: application/json
+
+
+### Get all carsAggregated
+
+GET http://localhost:5000/api/carsAggregated
+Content-Type: application/json
+
+
+### Get all carsAggregated with pagination and filters (brand and color only per task requirements)
+
+GET http://localhost:5000/api/carsAggregated?limit=36&page=1&brand=BMW&color=серый
+Content-Type: application/json
+
+
+### Get car by Id
+
+GET http://localhost:5000/api/cars/6ae900d8bf70aaa9742db540
+Content-Type: application/json
+
+
+### Create car
+
+POST http://localhost:5000/api/cars
+Content-Type: application/json
+
+{
+  "brand": "Kamaz",
+  "model": "54902A",
+  "year": 2014,
+  "color": "белый",
+  "engine_type": "Дизельный",
+  "bodywork_type": "Седельный тягач",
+  "gear_type": "Автоматическая",
+  "new": false,
+  "typeId": "65f000000000000000000001"
+}
+
+
+### Update car
+
+PUT http://localhost:5000/api/cars
+Content-Type: application/json
+
+{
+  "_id": "6aee97d30effc56e3c228ff6",
+  "brand": "Kamaz",
+  "model": "54902A",
+  "year": 2000,
+  "color": "белый",
+  "engine_type": "Дизельный",
+  "bodywork_type": "Седельный тягачЧЧЧ",
+  "gear_type": "Автоматическая",
+  "new": false,
+  "typeId": "65f000000000000000000001"
+}
+
+
+### Delete car with id
+
+DELETE http://localhost:5000/api/cars/6ae900d8bf70aaa9742db547
+Content-Type: application/json
+
+
+### set logo for car 6ae900d8bf70aaa9742db540
+
+POST http://localhost:5000/api/carlogo
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="_id"
+
+6ae900d8bf70aaa9742db540
+--WebAppBoundary
+Content-Disposition: form-data; name="logo"; filename="bmw.png"
+Content-Type: image/png
+
+< ./cars/img/bmw.png
+--WebAppBoundary--

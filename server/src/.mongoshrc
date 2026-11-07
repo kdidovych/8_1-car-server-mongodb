@@ -1,0 +1,5 @@
+// Usage Example:
+// db.clientConnections.find( { connectTime: toISO("06/07/2017") } )
+function toISO(dateString) {
+   return new Date(dateString).toISOString();
+}
